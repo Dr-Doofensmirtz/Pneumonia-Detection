@@ -1,4 +1,5 @@
 import tensorflow as tf
+from config import *
 
 def get_checkpoints():
     early_stop = tf.keras.callbacks.EarlyStopping(

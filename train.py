@@ -3,6 +3,9 @@ from model import MODEL
 from checkpoint import get_checkpoints
 from datasets import get_datasets
 
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import load_img
+
 
 train_data, validation_data, test_data = get_datasets()
 
@@ -17,6 +20,6 @@ check_p = get_checkpoints()
 with tf.device(DEVICE):
     classification_mod.fit(train_data,
                             epochs = EPOCHS,
-                            validattion_data = validation_data,
+                            validation_data = validation_data,
                             callbacks = check_p)
 
